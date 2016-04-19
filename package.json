@@ -1,0 +1,31 @@
+{
+  "name": "bubleify",
+  "version": "0.0.1",
+  "description": "Browserify transform that compiles es2015 to es5 using Bublé",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ./tests/browserify-test.js"
+  },
+  "keywords": [
+    "browserify",
+    "buble"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/garthenweb/bubleify"
+  },
+  "author": "Jannick Garthen <jannick.garthen@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "buble": "^0.5.5"
+  },
+  "devDependencies": {
+    "browserify": "^13.0.0",
+    "eslint": "^2.8.0",
+    "eslint-config-airbnb": "^7.0.0",
+    "eslint-plugin-import": "^1.5.0"
+  },
+  "bugs": {
+    "url": "https://github.com/garthenweb/bubleify/issues"
+  }
+}
