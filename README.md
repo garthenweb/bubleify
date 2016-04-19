@@ -10,7 +10,7 @@ Stay tuned or contribute!
 
 ## Credits
 
-Thanks goes to the [babelify](https://github.com/babel/babelify) team, while this code was inspired by the project.
+Thanks goes to the [babelify](https://github.com/babel/babelify) team, while this code was inspired by the project and of cause rich harris for the buble package.
 
 ## License
 
