@@ -41,8 +41,8 @@ test('simple js api with package.json', function(t) {
 
 test('simple cli', function(t) {
   var bProcess = spawn(browserifyCmd, [
-    `-r ${quadPath}:quad`,
-    `-t [ ${bubleifyPath} ]`,
+    '-r ' + quadPath + ':quad',
+    '-t [ ' + bubleifyPath + ' ]',
   ], { shell: true });
 
   var out = '';
