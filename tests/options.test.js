@@ -1,16 +1,20 @@
 'use strict';
 
-const test = require('tap').test;
-const assign = require('object-assign');
-const bubleify = require('../index');
+var test = require('tap').test;
+var assign = require('object-assign');
+var bubleify = require('../index');
 
-test('buble passed options', (t) => {
-  const filename = './test.js';
-  const _flags = {};
-  const transforms = { myCustomTransform: false };
-  const target = { Chrome: 50, Firefox: 43, Edge: 12 };
+test('buble passed options', function(t) {
+  var filename = './test.js';
+  var _flags = {};
+  var transforms = { myCustomTransform: false };
+  var target = { Chrome: 50, Firefox: 43, Edge: 12 };
 
-  const tBuble = bubleify(filename, { _flags, transforms, target });
+  var tBuble = bubleify(filename, {
+    _flags: _flags,
+    transforms: transforms,
+    target: target
+  });
 
   t.equal(tBuble._bubleOptions._flags, undefined);
 
