@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "pretest": "npm run compile",
-    "test": "tap tests/*.test.js",
-    "test:cli": "C:\\Users\\Jannick\\projects\\npm-packages\\bubleify\\node_modules\\.bin\\browserify -r C:\\Users\\Jannick\\projects\\npm-packages\\bubleify\\tests\\files\\quad.js -t [ C:\\Users\\Jannick\\projects\\npm-packages\\bubleify\\index.js ]",
+    "test": "babel-node --extensions=\"test.js\" ./node_modules/tap/bin/run.js tests/*.test.js",
     "compile": "babel -d lib/ src/",
     "prepublish": "npm run compile",
     "preversion": "npm test",
