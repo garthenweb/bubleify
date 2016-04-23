@@ -1,4 +1,4 @@
-# Bubléify [![build status][1]][2]
+# Bubléify [![build status][1]][2] [![Coverage Status](3)](4)
 
 A browserify transform for [Bublé](https://www.npmjs.com/package/buble) to transform ES2015 to ES5.
 
@@ -48,3 +48,5 @@ Licensed under the [MIT License](https://opensource.org/licenses/mit-license.php
 
 [1]: https://travis-ci.org/garthenweb/bubleify.svg
 [2]: https://travis-ci.org/garthenweb/bubleify
+[3]: https://coveralls.io/repos/github/garthenweb/bubleify/badge.svg?branch=master
+[4]: https://coveralls.io/github/garthenweb/bubleify?branch=master
