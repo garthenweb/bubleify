@@ -8,7 +8,8 @@
     "test": "node ./tests/browserify-test.js",
     "compile": "babel -d lib/ src/",
     "prepublish": "npm run compile",
-    "preversion": "npm test"
+    "preversion": "npm test",
+    "postversion": "git push && git push --tags"
   },
   "keywords": [
     "buble",
