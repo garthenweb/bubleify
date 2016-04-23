@@ -7,14 +7,17 @@ class Bubleify extends Transform {
     super();
     this._data = '';
     this._filename = filename;
-    this._options = options;
+    this._options = assign({ _flags: {} }, options);
   }
 
   get _bubleOptions() {
     const defaults = { source: this._filename };
     const options = assign(defaults, this._options);
+
+    // copy properties to not modify the existing objects
     // set default transforms with deactivated modules
-    options.transforms = assign({ modules: false }, options.transforms);
+    options.transforms = assign({ modules: false }, this._options.transforms);
+    options.target = assign({}, this._options.target);
 
     // remove browserify options
     delete options._flags;
@@ -22,12 +25,12 @@ class Bubleify extends Transform {
     return options;
   }
 
-  _transform(buf, enc, callback) {
+  _transform(buf, enc, cb) {
     this._data += buf;
-    callback();
+    cb();
   }
 
-  _flush(callback) {
+  _flush(cb) {
     try {
       const result = buble.transform(this._data, this._bubleOptions);
       let { code } = result;
@@ -43,7 +46,7 @@ class Bubleify extends Transform {
       this.emit('error', err);
       return;
     }
-    callback();
+    cb();
   }
 }
 

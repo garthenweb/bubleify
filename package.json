@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "pretest": "npm run compile",
-    "test": "node ./tests/browserify-test.js",
+    "test": "tap tests/*.test.js",
+    "test:cli": "C:\\Users\\Jannick\\projects\\npm-packages\\bubleify\\node_modules\\.bin\\browserify -r C:\\Users\\Jannick\\projects\\npm-packages\\bubleify\\tests\\files\\quad.js -t [ C:\\Users\\Jannick\\projects\\npm-packages\\bubleify\\index.js ]",
     "compile": "babel -d lib/ src/",
     "prepublish": "npm run compile",
     "preversion": "npm test",
@@ -34,7 +35,8 @@
     "browserify": "^13.0.0",
     "eslint": "^2.8.0",
     "eslint-config-airbnb": "^7.0.0",
-    "eslint-plugin-import": "^1.5.0"
+    "eslint-plugin-import": "^1.5.0",
+    "tap": "^5.7.1"
   },
   "bugs": {
     "url": "https://github.com/garthenweb/bubleify/issues"
