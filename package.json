@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "pretest": "npm run compile",
-    "test": "babel-node --extensions=\"test.js\" ./node_modules/tap/bin/run.js tests/*.test.js",
+    "test": "npm run lint && tap tests/*.test.js",
     "compile": "babel -d lib/ src/",
+    "lint": "eslint src/**.js",
     "prepublish": "npm run compile",
     "preversion": "npm test",
     "postversion": "git push && git push --tags"
