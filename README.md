@@ -1,4 +1,4 @@
-# Bubléify
+# Bubléify [![build status][1]][2] [![Coverage Status][3]][4]
 
 Very basic browserify transform for [Bublé](https://www.npmjs.com/package/buble).
 
@@ -15,3 +15,8 @@ Thanks goes to the [babelify](https://github.com/babel/babelify) team, while thi
 ## License
 
 Licensed under the [MIT License](https://opensource.org/licenses/mit-license.php).
+
+[1]: https://travis-ci.org/garthenweb/bubleify.svg
+[2]: https://travis-ci.org/garthenweb/bubleify
+[3]: https://coveralls.io/repos/garthenweb/bubleify/badge.svg?branch=master&service=github
+[4]: https://coveralls.io/github/garthenweb/bubleify?branch=master
