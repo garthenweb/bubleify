@@ -14,7 +14,8 @@ var browserifyCmd = require.resolve('../node_modules/.bin/browserify');
 
 var runContextQuad5 = function(src) {
   var sandbox = {};
-  vm.runInNewContext(src, sandbox);
+  var srcStr = typeof src !== 'string' ? src.toString('utf8') : src;
+  vm.runInNewContext(srcStr, sandbox);
   return sandbox.require('quad')(5);
 };
 
