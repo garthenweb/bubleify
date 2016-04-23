@@ -2,7 +2,15 @@
 
 A browserify transform for [Bublé](https://www.npmjs.com/package/buble) to transform ES2015 to ES5.
 
+## Installation
+
+``` bash
+npm install --save-dev bubleify
+```
+
 ## Usage
+
+### Node
 
 ``` javascript
 const browserify = require('browserify');
@@ -22,6 +30,12 @@ b.transform(bubleify, {
   },
 });
 b.bundle();
+```
+
+### CLI
+
+``` bash
+browserify script.js -o bundle.js -t [ bubleify ]
 ```
 
 ## Options
