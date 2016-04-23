@@ -1,4 +1,4 @@
-# Bubléify [![build status][1]][2] [![Coverage Status](3)](4)
+# Bubléify [![build status][1]][2] [![Coverage Status][3]][4]
 
 A browserify transform for [Bublé](https://www.npmjs.com/package/buble) to transform ES2015 to ES5.
 
