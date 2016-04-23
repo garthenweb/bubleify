@@ -11,8 +11,11 @@
     "preversion": "npm test"
   },
   "keywords": [
+    "buble",
     "browserify",
-    "buble"
+    "browserify-transform",
+    "es2015",
+    "es5"
   ],
   "repository": {
     "type": "git",
@@ -33,5 +36,8 @@
   },
   "bugs": {
     "url": "https://github.com/garthenweb/bubleify/issues"
+  },
+  "engines": {
+    "node": ">=0.10.x"
   }
 }
