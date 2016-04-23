@@ -1,4 +1,5 @@
 import buble from 'buble';
+import assign from 'object-assign';
 import { Transform } from 'stream';
 
 class Bubleify extends Transform {
@@ -11,9 +12,9 @@ class Bubleify extends Transform {
 
   get _bubleOptions() {
     const defaults = { source: this._filename };
-    const options = Object.assign(defaults, this._options);
+    const options = assign(defaults, this._options);
     // set default transforms with deactivated modules
-    options.transforms = Object.assign({ modules: false }, options.transforms);
+    options.transforms = assign({ modules: false }, options.transforms);
 
     // remove browserify options
     delete options._flags;
