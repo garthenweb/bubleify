@@ -3,6 +3,7 @@
 var test = require('tap').test;
 var vm = require('vm');
 var spawn = require('child_process').spawn;
+var path = require('path');
 
 var browserify = require('browserify');
 var bubleify = require('../index');
@@ -42,8 +43,8 @@ test('simple js api with package.json', function(t) {
 
 test('simple cli', function(t) {
   var bProcess = spawn(browserifyCmd, [
-    '-r ' + quadPath + ':quad',
-    '-t [ ' + bubleifyPath + ' ]',
+    '-r', quadPath + ':quad',
+    '-t', '[', bubleifyPath, ']',
   ], { shell: true });
 
   var out = '';
