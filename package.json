@@ -6,15 +6,15 @@
   "scripts": {
     "travis-coverage": "nyc report --reporter=text-lcov | coveralls",
     "coverage": "tap --cov --coverage-report=lcov tests/*.test.js",
-    "tapone": "tap --nyc-arg=--require --nyc-arg=babel-polyfill --timeout=60 --cov --coverage-report=text-summary",
-    "tapeall": "npm run tapone tests/*.test.js",
+    "tap:one": "tap --nyc-arg=--require --nyc-arg=babel-polyfill --timeout=60 --cov --coverage-report=text-summary",
+    "tap:all": "npm run tap:one tests/*.test.js",
     "pretest": "npm run compile",
-    "test": "npm run tapeall",
+    "test": "npm run tap:all",
     "test:babel": "babel tests/*.test.js -d . && npm test",
     "lint": "eslint src/**.js tests/**.js",
     "compile": "babel -d lib/ src/",
-    "prepublish": "npm run compile && npm run tapeall",
-    "preversion": "npm run compile && npm run tapeall",
+    "prepublish": "npm run compile && npm run tap:all",
+    "preversion": "npm run compile && npm run tap:all",
     "postversion": "git push && git push --tags"
   },
   "keywords": [
