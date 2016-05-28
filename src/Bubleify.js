@@ -1,6 +1,7 @@
 import buble from 'buble';
 import assign from 'object-assign';
 import { Transform } from 'stream';
+import { EOL } from 'os';
 
 class Bubleify extends Transform {
   constructor(filename, options) {
@@ -37,7 +38,7 @@ class Bubleify extends Transform {
 
       // append sourcemaps to code
       if (this._options._flags.debug) {
-        code += `\n//# sourceMappingURL=${result.map.toUrl()}`;
+        code += `${EOL}//# sourceMappingURL=${result.map.toUrl()}`;
       }
 
       this.emit('bubleify', result, this._filename);
