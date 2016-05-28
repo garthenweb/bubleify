@@ -13,7 +13,7 @@
     "test:babel": "babel tests/*.test.js -d . && npm test",
     "lint": "eslint src/**.js tests/**.js",
     "compile": "babel -d lib/ src/",
-    "prepublish": "npm run compile && npm run tap:all",
+    "publish": "npm run compile && npm run tap:all",
     "preversion": "npm run compile && npm run tap:all",
     "postversion": "git push && git push --tags"
   },
