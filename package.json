@@ -7,6 +7,7 @@
     "travis-coverage": "nyc report --reporter=text-lcov | coveralls",
     "coverage": "tap --cov --coverage-report=lcov tests/*.test.js",
     "tapone": "tap --nyc-arg=--require --nyc-arg=babel-polyfill --timeout=60 --cov --coverage-report=text-summary",
+    "pretest": "npm run compile",
     "test": "npm run tapone tests/*.test.js",
     "test:babel": "babel tests/*.test.js -d . && npm test",
     "lint": "eslint src/**.js tests/**.js",
