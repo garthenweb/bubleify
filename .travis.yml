@@ -11,7 +11,6 @@ matrix:
     - node_js: "0.10"
       env: BABEL=true
 
-install: "npm install"
 script: "[[ $BABEL == true ]] && npm run test:babel || npm test"
 after_success:
   - npm run travis-coverage
