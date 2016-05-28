@@ -1,15 +1,19 @@
 language: node_js
+node_js:
+  - "0.10"
+  - "0.12"
+  - "4"
+  - "5"
+  - "6"
+
+env:
+  - BABEL=true
+
 matrix:
-  include:
+  exclude:
     - node_js: "6"
-    - node_js: "5"
-      env: BABEL=true
-    - node_js: "4"
-      env: BABEL=true
-    - node_js: "0.12"
-      env: BABEL=true
-    - node_js: "0.10"
-      env: BABEL=true
+        env: "babel=true"
+
 script: "[[ $BABEL == true ]] && npm run test:babel || npm test"
 after_success:
   - npm run travis-coverage
