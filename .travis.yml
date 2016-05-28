@@ -12,7 +12,7 @@ env:
 matrix:
   exclude:
     - node_js: "6"
-        env: "babel=true"
+      env: "babel=true"
 
 script: "[[ $BABEL == true ]] && npm run test:babel || npm test"
 after_success:
