@@ -52,6 +52,12 @@ Bublèify by default disables the `module` transform to not throw an error when 
 
 Find a list of all transforms on the Bublè documentation in section [list of transforms](http://buble.surge.sh/guide/#list-of-transforms). For more detailed information about each transform also see [supported features](http://buble.surge.sh/guide/#supported-features) and [dangerous transforms](http://buble.surge.sh/guide/#dangerous-transforms).
 
+### sourceMap: Boolean
+
+Define whether a source map should be created from bable or not. Default value is `true`. Please note that browserify will not output any source map if debug mode is `false`, even if this option was set to `true`.
+
+Default value is `true`.
+
 ## Credits
 
 Thanks goes to [Rich Harris](https://twitter.com/rich_harris) for the [Bublè](https://www.npmjs.com/package/buble) package.

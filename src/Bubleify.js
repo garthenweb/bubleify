@@ -8,7 +8,7 @@ class Bubleify extends Transform {
     super();
     this._data = '';
     this._filename = filename;
-    this._options = assign({ _flags: {} }, options);
+    this._options = assign({ sourceMap: true }, options);
   }
 
   get _bubleOptions() {
@@ -36,8 +36,8 @@ class Bubleify extends Transform {
       const result = buble.transform(this._data, this._bubleOptions);
       let { code } = result;
 
-      // append sourcemaps to code
-      if (this._options._flags.debug) {
+      if (this._options.sourceMap) {
+        // append sourcemaps to code
         code += `${EOL}//# sourceMappingURL=${result.map.toUrl()}`;
       }
 
