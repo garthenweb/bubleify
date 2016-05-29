@@ -54,9 +54,9 @@ Find a list of all transforms on the Bublè documentation in section [list of tr
 
 ### sourceMap: Boolean
 
-Define whether a source map should be created from bable or not. Default value is `true`. Please note that browserify will not output any source map if debug mode is `false`, even if this option was set to `true`.
+Define whether an inline source map should or should not be created by Bublé. Default is `true`.
 
-Default value is `true`.
+_Please note that browserify will not output any source map if debug mode is `false`, even if sourceMap was set to `true`._
 
 ## Credits
 
