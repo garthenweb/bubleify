@@ -1,4 +1,4 @@
-import buble from 'buble';
+import { transform } from 'buble';
 import assign from 'object-assign';
 import { Transform } from 'stream';
 import { EOL } from 'os';
@@ -33,7 +33,7 @@ class Bubleify extends Transform {
 
   _flush(cb) {
     try {
-      const result = buble.transform(this._data, this._bubleOptions);
+      const result = transform(this._data, this._bubleOptions);
       let { code } = result;
 
       if (this._options.sourceMap) {
