@@ -8,7 +8,7 @@ class Bubleify extends Transform {
     super();
     this._data = '';
     this._filename = filename;
-    this._options = assign({ sourceMap: true }, options);
+    this._options = assign({ sourceMap: true, bubleError: false }, options);
   }
 
   get _bubleOptions() {
@@ -44,7 +44,12 @@ class Bubleify extends Transform {
       this.emit('bubleify', result, this._filename);
       this.push(code);
     } catch (err) {
-      this.emit('error', err);
+      // emit buble error message instead of the default error
+      if (this._options.bubleError && err.snippet) {
+        this.emit('error', `---${EOL}${err.snippet}${EOL}${EOL}${err.message}${EOL}`);
+      } else {
+        this.emit('error', err);
+      }
       return;
     }
     cb();

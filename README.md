@@ -58,6 +58,11 @@ Define whether an inline source map should or should not be created by Bublé. D
 
 _Please note that browserify will not output any source map if debug mode is `false`, even if sourceMap was set to `true`._
 
+### bubleError: Boolean
+
+Define whether the Bublè error or a simple text message should be passed to Browserify in case of an error.  
+_Bublè may in some situations throw a custom error. Browserify will, when used on the command line, just output the call stack in this situation but does not show the error message. Turning this option on will show a prober message but suppresses the call stack._
+
 ## Credits
 
 Thanks goes to [Rich Harris](https://twitter.com/rich_harris) for the [Bublè](https://www.npmjs.com/package/buble) package.
