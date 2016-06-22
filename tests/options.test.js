@@ -11,6 +11,9 @@ test('buble passed options', (t) => {
   const tBuble = bubleify(filename, { _flags, transforms, target });
 
   t.equal(tBuble._bubleOptions._flags, undefined);
+  t.equal(tBuble._bubleOptions.extensions, undefined);
+  t.equal(tBuble._bubleOptions.sourceMap, undefined);
+  t.equal(tBuble._bubleOptions.bubleError, undefined);
 
   t.match(tBuble._bubleOptions.transforms, assign({ modules: false }, transforms));
   t.notEqual(tBuble._bubleOptions.transforms, transforms);

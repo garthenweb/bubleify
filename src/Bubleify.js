@@ -23,6 +23,9 @@ class Bubleify extends Transform {
 
     // remove browserify options
     delete options._flags;
+    delete options.sourceMap;
+    delete options.extensions;
+    delete options.bubleError;
 
     return options;
   }
