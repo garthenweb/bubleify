@@ -58,13 +58,16 @@ class Bubleify extends Transform {
 }
 
 export default (filename, options) => {
+  // get extensions or defaults
+  let { extensions = ['.js', '.jsx', '.es', '.es6'] } = options;
+  // convert to json
+  extensions = Array.isArray(extensions) ? extensions : [extensions];
+
   const enrishedOptions = assign({
     sourceMap: true,
     bubleError: false,
-    extensions: ['.js', '.jsx', '.es', '.es6'],
-  }, options);
+  }, options, { extensions });
 
-  const { extensions } = enrishedOptions;
   const shouldIgnoreFile = !extensions.includes(extname(filename));
   // return empty stream for files that should not be transformed
   if (shouldIgnoreFile) {
