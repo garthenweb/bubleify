@@ -60,7 +60,8 @@ _Please note that browserify will not output any source map if debug mode is `fa
 
 ### extensions: Array
 
-The allowed file extensions to pass to bubleify.
+The allowed file extensions that should be transformed with Bublé. Files included into the stream that do not match an extension will be ignored by Bubléify.
+
 Default is `['.js', '.jsx', '.es', '.es6']`.
 
 ### bubleError: Boolean
