@@ -1,14 +1,15 @@
 import { transform } from 'buble';
 import assign from 'object-assign';
-import { Transform } from 'stream';
+import { Transform, PassThrough } from 'stream';
 import { EOL } from 'os';
+import { extname } from 'path';
 
 class Bubleify extends Transform {
   constructor(filename, options) {
     super();
     this._data = '';
     this._filename = filename;
-    this._options = assign({ sourceMap: true, bubleError: false }, options);
+    this._options = options;
   }
 
   get _bubleOptions() {
@@ -56,4 +57,20 @@ class Bubleify extends Transform {
   }
 }
 
-export default (filename, options) => new Bubleify(filename, options);
+export default (filename, options) => {
+  const enrishedOptions = assign({
+    sourceMap: true,
+    bubleError: false,
+    extensions: ['.js', '.jsx', '.es', '.es6'],
+  }, options);
+
+  const { extensions } = enrishedOptions;
+  const shouldIgnoreFile = !extensions.includes(extname(filename));
+  // return empty stream for files that should not be transformed
+  if (shouldIgnoreFile) {
+    // eslint-disable-next-line new-cap
+    return PassThrough();
+  }
+
+  return new Bubleify(filename, enrishedOptions);
+};
