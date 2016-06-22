@@ -45,7 +45,7 @@ test('simple cli', (t) => {
 test('cli with custom extension', (t) => {
   const bProcess = spawn(browserifyCmd, [
     '-r', `${quadPathBuble}:quad`,
-    '-t', '[', bubleifyPath, '--extensions .buble ]',
+    '-t', '[', bubleifyPath, '--extensions', '.buble', ']',
   ], { shell: true });
 
   testContextQuad5(bProcess, t);
