@@ -71,7 +71,7 @@ export default (filename, options) => {
     bubleError: false,
   }, options, { extensions });
 
-  const shouldIgnoreFile = !extensions.includes(extname(filename));
+  const shouldIgnoreFile = extensions.indexOf(extname(filename)) === -1;
   // return empty stream for files that should not be transformed
   if (shouldIgnoreFile) {
     // eslint-disable-next-line new-cap
