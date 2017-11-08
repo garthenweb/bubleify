@@ -6,10 +6,6 @@ matrix:
     - node_js: "6"
     - node_js: "4"
       env: BABEL=true
-    - node_js: "0.12"
-      env: BABEL=true
-    - node_js: "0.10"
-      env: BABEL=true
 
 script: "[[ $BABEL == true ]] && npm run test:babel || npm test"
 after_success:
