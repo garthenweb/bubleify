@@ -1,4 +1,4 @@
-const test = require('tap').test;
+const { test } = require('tap');
 
 const browserify = require('browserify');
 const bubleify = require('../index');

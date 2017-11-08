@@ -1,4 +1,4 @@
-const test = require('tap').test;
+const { test } = require('tap');
 const vm = require('vm');
 
 const browserify = require('browserify');

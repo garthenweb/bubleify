@@ -1,6 +1,6 @@
-const test = require('tap').test;
+const { test } = require('tap');
 const vm = require('vm');
-const spawn = require('child_process').spawn;
+const { spawn } = require('child_process');
 
 const quadPath = require.resolve('./files/quad.js');
 const quadPathBuble = require.resolve('./files/quad.buble');

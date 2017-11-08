@@ -1,5 +1,5 @@
 const fs = require('fs');
-const test = require('tap').test;
+const { test } = require('tap');
 
 const convert = require('convert-source-map');
 const browserify = require('browserify');

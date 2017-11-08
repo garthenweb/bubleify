@@ -1,4 +1,4 @@
-const test = require('tap').test;
+const { test } = require('tap');
 const assign = require('object-assign');
 const bubleify = require('../index');
 
