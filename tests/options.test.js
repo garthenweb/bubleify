@@ -1,5 +1,4 @@
 const { test } = require('tap');
-const assign = require('object-assign');
 const bubleify = require('../index');
 
 test('buble passed options', (t) => {
@@ -15,7 +14,7 @@ test('buble passed options', (t) => {
   t.equal(tBuble._bubleOptions.sourceMap, undefined);
   t.equal(tBuble._bubleOptions.bubleError, undefined);
 
-  t.match(tBuble._bubleOptions.transforms, assign({ modules: false }, transforms));
+  t.match(tBuble._bubleOptions.transforms, Object.assign({ modules: false }, transforms));
   t.notEqual(tBuble._bubleOptions.transforms, transforms);
 
   t.match(tBuble._bubleOptions.target, target);

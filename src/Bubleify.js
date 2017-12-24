@@ -1,5 +1,4 @@
 import { transform } from 'buble';
-import assign from 'object-assign';
 import { Transform, PassThrough } from 'stream';
 import { EOL } from 'os';
 import { extname } from 'path';
@@ -14,12 +13,12 @@ class Bubleify extends Transform {
 
   get _bubleOptions() {
     const defaults = { source: this._filename };
-    const options = assign(defaults, this._options);
+    const options = Object.assign(defaults, this._options);
 
     // copy properties to not modify the existing objects
     // set default transforms with deactivated modules
-    options.transforms = assign({ modules: false }, this._options.transforms);
-    options.target = assign({}, this._options.target);
+    options.transforms = Object.assign({ modules: false }, this._options.transforms);
+    options.target = Object.assign({}, this._options.target);
 
     // remove browserify options
     delete options._flags;
@@ -66,7 +65,7 @@ export default (filename, options) => {
   // convert to json
   extensions = Array.isArray(extensions) ? extensions : [extensions];
 
-  const enrishedOptions = assign({
+  const enrishedOptions = Object.assign({
     sourceMap: true,
     bubleError: false,
   }, options, { extensions });

@@ -31,8 +31,7 @@
   "author": "Jannick Garthen <jannick.garthen@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "buble": "^0.18.0",
-    "object-assign": "^4.1.1"
+    "buble": "^0.18.0"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
