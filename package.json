@@ -1,6 +1,6 @@
 {
   "name": "bubleify",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Browserify transform that compiles es2015 to es5 using Bublé",
   "main": "index.js",
   "scripts": {
