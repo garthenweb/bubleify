@@ -45,7 +45,7 @@
     "eslint-plugin-import": "^2.16.0",
     "lodash": "^4.17.15",
     "nyc": "^15.1.0",
-    "tap": "^11.1.5"
+    "tap": "^14.10.7"
   },
   "bugs": {
     "url": "https://github.com/garthenweb/bubleify/issues"
