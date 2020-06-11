@@ -47,7 +47,7 @@
     "minimist": "^1.2.5",
     "mkdirp": "^1.0.4",
     "nyc": "^15.1.0",
-    "tap": "^14.10.7"
+    "tap": "^11.1.5"
   },
   "bugs": {
     "url": "https://github.com/garthenweb/bubleify/issues"
